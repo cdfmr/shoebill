@@ -35,7 +35,7 @@
 
 static void _print_vers(void)
 {
-    printf("Shoebill v0.0.4 - http://github.com/pruten/shoebill - Peter Rutenbar (c) 2014\n\n");
+    printf("Shoebill v0.0.5 - http://github.com/pruten/shoebill - Peter Rutenbar (c) 2015\n\n");
 }
 
 rb_tree *keymap;
@@ -493,7 +493,7 @@ static _Bool _init_pram (void)
         if (f == NULL) {
             printf("Can't open pram_path! [%s] [errno=%s]\n",
                    user_params.pram_path,
-                   sys_errlist[errno]);
+                   strerror(errno));
             return 0;
         }
         rewind(f);

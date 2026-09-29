@@ -28,5 +28,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>shoeApplication</string>
+	<key>CFBundleIconFile</key>
+	<string>shoebill.icns</string>
 </dict>
 </plist>
