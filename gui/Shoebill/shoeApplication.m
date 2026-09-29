@@ -165,17 +165,17 @@
     if (doCaptureKeys) {
         assert(isRunning);
         NSEventType type = [event type];
-        if (type == NSFlagsChanged) {
+        if (type == NSEventTypeFlagsChanged) {
             NSUInteger modifierFlags = [event modifierFlags];
             shoebill_key_modifier(modifierFlags >> 16);
             
             // Block any key-related event while the command key is down
-            if (modifierFlags & NSCommandKeyMask)
+			if (modifierFlags & NSEventModifierFlagCommand)
                 return ;
             
             [super sendEvent:event];
         }
-        else if (type == NSKeyDown || type == NSKeyUp) {
+		else if (type == NSEventTypeKeyDown || type == NSEventTypeKeyUp) {
             NSString *chars = [[event charactersIgnoringModifiers] lowercaseString];
             NSUInteger modifierFlags = [event modifierFlags];
             unichar c = [chars characterAtIndex:0];
@@ -186,12 +186,12 @@
             
             if (rb_find(keymap, c, &value)) {
                 shoebill_key_modifier((value >> 8) | (modifierFlags >> 16));
-                shoebill_key((type == NSKeyDown), value & 0xff);
+				shoebill_key((type == NSEventTypeKeyDown), value & 0xff);
                 
             }
             
             // Block any key-related event while the command key is down
-            if (modifierFlags & NSCommandKeyMask)
+			if (modifierFlags & NSEventModifierFlagCommand)
                 return ;
             
             [super sendEvent:event];
@@ -205,13 +205,8 @@
 
 - (void) complain:(NSString*)str
 {
-    NSAlert *theAlert = [NSAlert
-                         alertWithMessageText:nil
-                         defaultButton:nil
-                         alternateButton:nil
-                         otherButton:nil
-                         informativeTextWithFormat:@"%@", str
-                         ];
+	NSAlert *theAlert = [[[NSAlert alloc] init] autorelease];
+	[theAlert setInformativeText:str];
     [theAlert runModal];
 }
 
@@ -404,13 +399,9 @@ void pram_callback (void *param, const uint8_t addr, const uint8_t byte)
         if (!tap_fd_valid) {
             tap_fd = open(tapPath, O_RDWR | O_NOFOLLOW);
             if (tap_fd == -1) {
-                NSAlert *theAlert = [NSAlert
-                                     alertWithMessageText:nil
-                                     defaultButton:nil
-                                     alternateButton:nil
-                                     otherButton:nil
-                                     informativeTextWithFormat:@"Couldn't open tap device (errno = %d)", errno
-                                     ];
+				NSAlert *theAlert =  [[[NSAlert alloc] init] autorelease];
+				[theAlert setInformativeText:
+					[NSString stringWithFormat:@"Couldn't open tap device (errno = %d)", errno]];
                 [theAlert runModal];
                 return ;
             }

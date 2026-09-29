@@ -189,25 +189,22 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button identifier="verbose" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-Bw-xDM">
+                                        <button identifier="screen1" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JSa-Bw-xDM">
                                             <rect key="frame" x="57" y="258" width="129" height="18"/>
-                                            <string key="toolTip">Verbose mode causes A/UX to print diagnostic info during boot, and it will also run fsck to repair the root filesystem if necessary.</string>
                                             <buttonCell key="cell" type="check" title="Enable Screen 1" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="azN-j2-txA">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
-                                        <button identifier="verbose" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QR4-Cc-AkE">
+                                        <button identifier="screen2" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QR4-Cc-AkE">
                                             <rect key="frame" x="57" y="228" width="129" height="18"/>
-                                            <string key="toolTip">Verbose mode causes A/UX to print diagnostic info during boot, and it will also run fsck to repair the root filesystem if necessary.</string>
                                             <buttonCell key="cell" type="check" title="Enable Screen 2" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Zqf-mb-br4">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
-                                        <button identifier="verbose" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6X-Zw-psD">
+                                        <button identifier="screen3" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6X-Zw-psD">
                                             <rect key="frame" x="57" y="198" width="129" height="18"/>
-                                            <string key="toolTip">Verbose mode causes A/UX to print diagnostic info during boot, and it will also run fsck to repair the root filesystem if necessary.</string>
                                             <buttonCell key="cell" type="check" title="Enable Screen 3" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Cfv-ZG-aBO">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -317,9 +314,8 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button identifier="verbose" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isQ-0Q-gQ4">
+                                        <button identifier="screen4" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isQ-0Q-gQ4">
                                             <rect key="frame" x="57" y="168" width="129" height="18"/>
-                                            <string key="toolTip">Verbose mode causes A/UX to print diagnostic info during boot, and it will also run fsck to repair the root filesystem if necessary.</string>
                                             <buttonCell key="cell" type="check" title="Enable Screen 4" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dNj-R0-mIT">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>

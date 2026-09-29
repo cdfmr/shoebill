@@ -114,7 +114,7 @@
     [openPanel setCanChooseFiles:YES];
     [openPanel setAllowsMultipleSelection:NO];
     
-    if ([openPanel runModal] != NSOKButton)
+	if ([openPanel runModal] != NSModalResponseOK)
         return ;
     
     NSArray *urls = [openPanel URLs];
@@ -152,13 +152,8 @@
 
 - (void) complain:(NSString*)str
 {
-    NSAlert *theAlert = [NSAlert
-                         alertWithMessageText:nil
-                         defaultButton:nil
-                         alternateButton:nil
-                         otherButton:nil
-                         informativeTextWithFormat:@"%@", str
-                         ];
+	NSAlert *theAlert = [[[NSAlert alloc] init] autorelease];
+	[theAlert setInformativeText:str];
     [theAlert runModal];
 }
 
